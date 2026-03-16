@@ -1,27 +1,96 @@
-# Essentials
+# EasyTask — Angular Task Management App
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.1.2.
+A task management application built with **Angular 17+** as part of a structured learning path toward becoming a professional Angular developer.
 
-## Development server
+---
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Built With
 
-## Code scaffolding
+- **Angular 17+** — Frontend framework
+- **TypeScript** — Strongly typed JavaScript
+- **NgModule Architecture** — Feature-based module organization
+- **Angular Forms** — Template-driven forms with `ngModel`
+- **LocalStorage** — Client-side data persistence
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+---
 
-## Build
+## Angular Concepts Covered
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+| Concept                         | Implementation                                      |
+| ------------------------------- | --------------------------------------------------- |
+| Component Architecture          | `HeaderComponent`, `UserComponent`, `TaskComponent` |
+| NgModule Pattern                | `AppModule`, `TasksModule`, `SharedModule`          |
+| @Input / @Output                | User selection, task events                         |
+| Services & Dependency Injection | `TasksService` with `providedIn: 'root'`            |
+| Template-driven Forms           | New task creation with `[(ngModel)]`                |
+| Content Projection              | `CardComponent` with `<ng-content>`                 |
+| Angular Pipes                   | `DatePipe` for due date formatting                  |
+| Control Flow (`@if`, `@for`)    | Conditional rendering & task lists                  |
+| LocalStorage Persistence        | Tasks saved across page refreshes                   |
 
-## Running unit tests
+---
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Project Structure
 
-## Running end-to-end tests
+```
+src/app/
+├── header/              # App header component
+├── user/                # User list & selection
+│   ├── user.component
+│   ├── user.model.ts
+│   └── dummy-users.ts
+├── tasks/               # Task management feature
+│   ├── task/            # Single task display
+│   ├── new-task/        # Add task form
+│   ├── tasks.component  # Tasks container
+│   ├── tasks.service.ts # State & business logic
+│   ├── tasks.module.ts  # Feature module
+│   └── task.model.ts
+└── shared/
+    └── card/            # Reusable card component
+        └── shared.module.ts
+```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+---
 
-## Further help
+## Getting Started
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+### Prerequisites
+
+- Node.js 18+
+- Angular CLI 17+
+
+```bash
+npm install -g @angular/cli
+```
+
+### Installation
+
+```bash
+git clone https://github.com/YOUR_USERNAME/easytask-angular.git
+cd easytask-angular
+npm install
+ng serve
+```
+
+Open your browser at `http://localhost:4200`
+
+---
+
+## Features
+
+- View all users in a sidebar
+- Select a user to see their tasks
+- Add new tasks with title, summary, and due date
+- Mark tasks as complete (removes from list)
+- Tasks persist in localStorage across sessions
+
+---
+
+## Roadmap
+
+- [ ] Angular Routing (multi-page navigation)
+- [ ] Reactive Forms
+- [ ] HTTP Client (REST API integration)
+- [ ] RxJS & Observables
+- [ ] Angular Signals
